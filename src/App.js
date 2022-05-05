@@ -2,10 +2,15 @@ import React,{useEffect,useState,useRef} from 'react';
 import {Route,Routes} from 'react-router-dom';
 import './App.css';
 
+//components
+import Home from './components/Home/Home'
+
 function App() {
   return (
     <div className="App">
-      welcome
+      <Routes>
+        <Route path='/' element={<Home/>} />
+      </Routes>
     </div>
   );
 }
