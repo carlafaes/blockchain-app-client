@@ -23,7 +23,11 @@ const AddList = () => {
         {list.map((item,idx)=>{
           return(
             <div key={idx}>
-              <ItemList key={item.id} removeItem={removeItem} item={item}/>
+              <ItemList
+              key={item.id}
+              removeItem={removeItem}
+              item={item}
+              />
             </div>
           )
         })}

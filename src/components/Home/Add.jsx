@@ -1,7 +1,9 @@
-
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {addAdress, addAdressType} from '../../redux/action/index'
 
 const Add = (props) => {
+    const dispatch = useDispatch();
     const {addList} = props;
     
     const [input,setInput] =useState('')
@@ -12,9 +14,15 @@ const Add = (props) => {
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        addList(input)
+        dispatch(addAdress(input))
         setInput('')
     };
+
+    useEffect(()=>{
+        return () =>{
+            dispatch(addAdressType())
+        }
+    })
 
   return (
     <div>
@@ -27,7 +35,7 @@ const Add = (props) => {
             onChange={handleChange}
             />
             <button type='submit'>
-                Add 
+                Add
             </button>
         </form>
     </div>

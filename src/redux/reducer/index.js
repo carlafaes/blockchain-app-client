@@ -8,7 +8,8 @@ import {
 const initialState = {
     adress:[],
     wallet:{},
-    value:[]
+    value:[],
+
 }
 
 export default function rootReducer(state = initialState, action){
@@ -27,6 +28,10 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state,
                 value:action.payload
+            }
+        case ADD_ADRESS:
+            return{
+                ...state
             }
         default:
             return{
