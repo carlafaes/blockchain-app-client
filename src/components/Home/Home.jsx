@@ -10,12 +10,10 @@ import AddList from './AddList/AddList';
 const Home = () => {
   const dispatch =useDispatch();
   const transaction= useSelector((tr)=> tr.value)
-  console.log(transaction,'transaction')
+  
   const wallet = useSelector((st) => st.wallet)
   const adress= useSelector((add)=> add.adress)
-  console.log(adress,'home adress')
-  console.log(wallet,'home wallet')
-
+  
   
 
   useEffect(()=>{
@@ -31,25 +29,30 @@ const Home = () => {
       {wallet ? 
         <p>Total: {wallet}</p>
     :
-    <p>no carga</p>}
+    <p>cargakndo</p>}
 
         <table>
           <thead>
+        <tr>
           <th>Block</th>
           <th>From</th>
           <th>To</th>
           <th>Hash</th>
           <th>Value</th>
+        </tr>
           </thead>
+        
 
           {transaction && transaction.map((tr,idx)=>(
-            <tr key={idx}>
+            <tbody key={idx}>
+            <tr >
               <td>{tr.blockNumber}</td>
               <td>{tr.from}</td>
               <td>{tr.to}</td>
               <td>{tr.hash}</td>
               <td>{tr.value}</td>
             </tr>
+            </tbody>
           ))}
           </table>
     </div>
