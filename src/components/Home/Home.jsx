@@ -1,7 +1,9 @@
 import React,{useState, useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux'
 import { getWallet,getAddress,getTransaction } from '../../redux/action';
-
+ //components
+ import Add from './Add';
+import AddList from './AddList/AddList';
 
 
 
@@ -21,8 +23,11 @@ const Home = () => {
     dispatch(getWallet())
     dispatch(getAddress())
   },[dispatch])
+
+
   return (
     <div>
+      <AddList/>
       {wallet ? 
         <p>Total: {wallet}</p>
     :
