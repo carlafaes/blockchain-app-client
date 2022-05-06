@@ -2,9 +2,8 @@ import React,{useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {addAdress, addAdressType} from '../../redux/action/index'
 
-const Add = (props) => {
+const Add = () => {
     const dispatch = useDispatch();
-    const {addList} = props;
     
     const [input,setInput] =useState({
         adress:''

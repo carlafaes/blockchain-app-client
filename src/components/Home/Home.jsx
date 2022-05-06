@@ -3,7 +3,6 @@ import {useDispatch,useSelector} from 'react-redux'
 import { getWallet,getAddress,getTransaction } from '../../redux/action';
  //components
  import Add from './Add';
-import AddList from './AddList/AddList';
 import List from './List/List';
 
 
@@ -26,7 +25,7 @@ const Home = () => {
 
   return (
     <div>
-      <AddList/>
+      <Add/>
       <List/>
       {wallet ? 
         <p>Total: {wallet}</p>
@@ -45,7 +44,7 @@ const Home = () => {
           </thead>
         
 
-          {transaction && transaction.map((tr,idx)=>(
+          {transaction ? transaction.map((tr,idx)=>(
             <tbody key={idx}>
             <tr >
               <td>{tr.blockNumber}</td>
@@ -55,7 +54,8 @@ const Home = () => {
               <td>{tr.value}</td>
             </tr>
             </tbody>
-          ))}
+          ))
+        : null }
           </table>
     </div>
   )
