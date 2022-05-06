@@ -2,7 +2,8 @@
 import React,{useState} from 'react'
 
 const Add = (props) => {
-    
+    const {addList} = props;
+    console.log( props)
     const [input,setInput] =useState('')
 
     const handleChange=(e)=>{
@@ -11,7 +12,7 @@ const Add = (props) => {
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        props.addList(input)
+        addList(input)
         console.log(input)
         setInput('')
     };

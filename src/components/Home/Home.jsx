@@ -34,13 +34,13 @@ const Home = () => {
     <p>no carga</p>}
 
         <table>
-          <tr>
+          <thead>
           <th>Block</th>
           <th>From</th>
           <th>To</th>
           <th>Hash</th>
           <th>Value</th>
-          </tr>
+          </thead>
 
           {transaction && transaction.map((tr,idx)=>(
             <tr key={idx}>
