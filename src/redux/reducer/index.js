@@ -1,8 +1,14 @@
-import {GET_ADRESS,GET_WALLET, ADD_ADRESS} from '../action/types';
+import {
+    GET_ADRESS,
+    GET_WALLET, 
+    ADD_ADRESS,
+    GET_TRANSACTION}
+     from '../action/types';
 
 const initialState = {
     adress:[],
-    wallet:[]
+    wallet:{},
+    value:[]
 }
 
 export default function rootReducer(state = initialState, action){
@@ -11,6 +17,16 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state,
                 adress:action.payload
+            }
+        case GET_WALLET:
+            return{
+                ...state,
+                wallet:action.payload
+            }
+        case GET_TRANSACTION:
+            return{
+                ...state,
+                value:action.payload
             }
         default:
             return{

@@ -1,16 +1,20 @@
-import { GET_ADRESS,GET_WALLET, ADD_ADRESS } from "./types";
+import { GET_ADRESS,GET_WALLET, ADD_ADRESS,GET_TRANSACTION } from "./types";
 import axios from 'axios';
 
-export const ROUT_GET_ADRESS= '/api/show';
+export const ROUT_GET_ADRESS= 'http://localhost:5000/api/show';
 
-export const ROUT_GET_WALLET= '/api/wallet';
+export const ROUT_GET_WALLET= 'http://localhost:5000/api/wall';
 
-export const ROUT_ADD_ADRESS= '/api/add';
+export const ROUT_GET_TRANSACTION= 'http://localhost:5000/api/transaction';
+
+export const ROUT_ADD_ADRESS= 'http://localhost:5000/api/add';
 
 export function getAddress(){
     return async(dispatch)=>{
         let adress= await axios.get(ROUT_GET_ADRESS);
+        console.log(adress,'adres')
         let data= adress.data;
+        console.log(data,'data')
 
         return dispatch({
             type:GET_ADRESS,
@@ -18,3 +22,40 @@ export function getAddress(){
         })
     }
 }
+
+export function getTransaction(){
+    return async(dispatch)=>{
+        let adress= await axios.get(ROUT_GET_TRANSACTION);
+        let data= adress.data;
+        console.log(data,'data')
+
+        return dispatch({
+            type:GET_TRANSACTION,
+            payload:data
+        })
+    }
+}
+
+export function getWallet(){
+    return async(dispatch)=>{
+        let wallet= await axios.get(ROUT_GET_WALLET);
+        console.log(wallet,'wallet')
+        let data= wallet.data;
+        console.log(data,'data wallet')
+
+        return dispatch({
+            type:GET_WALLET,
+            payload:data
+        })
+    }
+}
+
+export function addAdress(payload){
+    return async function(){
+        const created= await axios.post(ROUT_ADD_ADRESS,payload);
+         console.log(created.data)
+        return created.data;
+    } 
+}
+
+export const addAdressType = () => ({type: ADD_ADRESS})
