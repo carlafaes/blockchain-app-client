@@ -3,6 +3,8 @@ import {useDispatch,useSelector} from 'react-redux'
 import { getWallet,getAddress,getTransaction } from '../../redux/action';
 
 
+
+
 const Home = () => {
   const dispatch =useDispatch();
   const transaction= useSelector((tr)=> tr.value)
@@ -11,6 +13,8 @@ const Home = () => {
   const adress= useSelector((add)=> add.adress)
   console.log(adress,'home adress')
   console.log(wallet,'home wallet')
+
+  
 
   useEffect(()=>{
     dispatch(getTransaction())
@@ -23,16 +27,26 @@ const Home = () => {
         <p>Total: {wallet}</p>
     :
     <p>no carga</p>}
-    
-    {transaction && transaction.map((tr)=>(
-      <div>
-        <p>from: {tr.from}</p>
-        <p>value:{tr.value}</p>
-        <p>block number:{tr.blockNumber}</p>
-        <p>Hash:{tr.hash}</p>
-        <p>To:{tr.to}</p>
-      </div>
-    ))}
+
+        <table>
+          <tr>
+          <th>Block</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Hash</th>
+          <th>Value</th>
+          </tr>
+
+          {transaction && transaction.map((tr,idx)=>(
+            <tr key={idx}>
+              <td>{tr.blockNumber}</td>
+              <td>{tr.from}</td>
+              <td>{tr.to}</td>
+              <td>{tr.hash}</td>
+              <td>{tr.value}</td>
+            </tr>
+          ))}
+          </table>
     </div>
   )
 }
