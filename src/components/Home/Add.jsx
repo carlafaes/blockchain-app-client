@@ -6,23 +6,33 @@ const Add = (props) => {
     const dispatch = useDispatch();
     const {addList} = props;
     
-    const [input,setInput] =useState('')
+    const [input,setInput] =useState({
+        adress:''
+    })
 
     const handleChange=(e)=>{
-        setInput(e.target.value);
+        setInput({[e.target.name]: e.target.value});
     };
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        dispatch(addAdress(input))
-        setInput('')
+
+        let succes = {
+            adress: input.adress
+        }
+        dispatch(addAdress(succes))
+        setInput({
+            adress:''
+        })
+        alert('Adress created succesfully');
     };
 
     useEffect(()=>{
         return () =>{
             dispatch(addAdressType())
         }
-    })
+    },[dispatch])
+
 
   return (
     <div>
@@ -30,8 +40,8 @@ const Add = (props) => {
             <input
             type='text'
             placeholder='Add a Adress'
-            value={input}
-            name='text'
+            value={input.adress}
+            name='adress'
             onChange={handleChange}
             />
             <button type='submit'>
