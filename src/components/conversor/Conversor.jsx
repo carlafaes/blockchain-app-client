@@ -2,11 +2,30 @@ import React,{useState} from 'react'
 
 const Conversor = () => {
 const  [val, setVal]=useState('')
+const  [value, setValue]=useState('')
 console.log(val,'val')
-    function convertEur(e){
-      setVal(e.target.val.value)
-      console.log(val,'eur')
-    }
+console.log(value,'value')
+
+function getValue(e){
+    setVal(()=>{
+        return{
+            [e.target.name]: e.target.value
+        }
+    })
+    console.log(val,'eur')
+}
+function convertEur(e){
+    e.preventDefault()
+    setValue((Number(val.val) * 2538.81)).toFixed(1) 
+    console.log('me ejecute euro')
+}
+function convertDol(e){
+    e.preventDefault()
+    setValue((Number(val.val) * 2785.18).toFixed(1))
+    
+  
+}
+
   return (
     <div>
         <h3>Convert</h3>
@@ -16,13 +35,14 @@ console.log(val,'val')
         min='0'
         max='100000'
         name='val'
+        onChange={(e)=> getValue(e)}
         />
-        <select id='de' >
-            <option value='1' onChange={convertEur}>EUR</option>
-            <option value='2'>USD</option>
-            <option value='3'>ETH</option>
-        </select>
-        <h5 id='resultado'>resultado {val}</h5>
+            <button value='1' onClick={(e)=>convertEur(e)}>EUR</button>
+            <button value='2' onClick={(e)=>convertDol(e)}>USD</button>
+        {value ?( 
+        <p>Result: {value}</p>)
+        : <p>0.00</p>}
+       
     </div>
   )
 }

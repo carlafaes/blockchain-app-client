@@ -27,14 +27,14 @@ const Home = () => {
   return (
     <div>
       <center>
-        <Conversor/>
-      <Add/>
-      <List/>
       {wallet ? 
-        <p>Total: {wallet}</p>
-    :
-    <p>cargakndo</p>}
+        <p>Total: {wallet} ETH</p>
+        :
+        <p>cargando</p>}
 
+        <Conversor/>
+        <Add/>
+        <List/>
         <table>
           <thead>
         <tr>
