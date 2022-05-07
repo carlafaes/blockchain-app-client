@@ -26,6 +26,7 @@ const Home = () => {
 
   return (
     <div>
+      <center>
       <Add/>
       <List/>
       {wallet ? 
@@ -58,6 +59,7 @@ const Home = () => {
           ))
         : null }
           </table>
+          </center>
     </div>
   )
 }
