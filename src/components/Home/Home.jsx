@@ -4,6 +4,7 @@ import { getWallet,getAddress,getTransaction } from '../../redux/action';
  //components
  import Add from './Add';
 import List from './List/List';
+import Favourites from './favourites/Favourites';
 
 
 
@@ -25,6 +26,7 @@ const Home = () => {
 
   return (
     <div>
+      <Favourites/>
       <Add/>
       <List/>
       {wallet ? 
