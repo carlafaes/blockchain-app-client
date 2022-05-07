@@ -1,8 +1,9 @@
 import React,{useState, useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux'
 import { getWallet,getAddress,getTransaction } from '../../redux/action';
+import style from './Home.module.css'
  //components
- import Add from './Add';
+ import Add from '../Add/Add';
 import List from './List/List';
 import Conversor from '../conversor/Conversor';
 
@@ -26,15 +27,17 @@ const Home = () => {
 
   return (
     <div>
-      <center>
       {wallet ? 
         <p>Total: {wallet} ETH</p>
         :
         <p>cargando</p>}
 
+        <div className={style.comp}>
         <Conversor/>
         <Add/>
         <List/>
+        </div>
+      <center>
         <table>
           <thead>
         <tr>

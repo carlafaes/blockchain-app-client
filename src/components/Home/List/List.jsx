@@ -1,8 +1,9 @@
-import { style } from '@mui/system';
 import React,{useEffect, useState} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { getAddress } from '../../../redux/action/index'
+import  style  from './List.module.css';
 import sty from '../favourites/Popup.module.css'
+
 
 //components
 import Popup from '../favourites/PopUp';
@@ -47,11 +48,11 @@ const List = () => {
             setToggle={setButtonPopup}
             />  
             </div>
-            <li fav={adressTotal}>
+            <li fav={adressTotal} className={style.li_add}>
             {adressTotal && adressTotal.map((ad,idx)=>(
-                    <div key={idx}>
-                        <p>{ad.adress}</p>
-                        <button  onClick={()=> addFavorite(ad._id)}>fav</button>
+                    <div key={idx} className={style.add_fav}>
+                        <p className={style.address}>{ad.adress}</p>
+                        <button className={style.btn} onClick={()=> addFavorite(ad._id)}>❤️</button>
                     </div>
                 
                 ))}

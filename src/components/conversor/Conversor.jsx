@@ -1,3 +1,4 @@
+import  style  from './Conversor.module.css';
 import React,{useState} from 'react'
 
 const Conversor = () => {
@@ -27,7 +28,7 @@ function convertDol(e){
 }
 
   return (
-    <div>
+    <div className={style.container}>
         <h3>Convert</h3>
         <input
         type='number'
@@ -35,6 +36,7 @@ function convertDol(e){
         min='0'
         max='100000'
         name='val'
+        placeholder='ETH'
         onChange={(e)=> getValue(e)}
         />
             <button value='1' onClick={(e)=>convertEur(e)}>EUR</button>

@@ -1,0 +1,8 @@
+
+.comp{
+    background-color: rgba(137, 43, 226, 0.164);
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+
+}
