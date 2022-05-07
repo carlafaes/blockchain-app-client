@@ -10,16 +10,13 @@ const List = () => {
     const dispatch= useDispatch();
     const adressTotal= useSelector((st) => st.adress)
     const [fav,setFav]= useState([])
-    let favs=[]
-    const [favoritos,setFavoritos] = useState(null)
+    
     console.log(fav,'favoritos')
 
     const [buttonPopup, setButtonPopup] = useState(true);
     const [timedPopup, setTimedPopup] = useState(false);
     console.log(timedPopup,'timed')
-    let favourite=()=>{
-    }
-    
+   
     useEffect(()=>{
         dispatch(getAddress())
         window.localStorage.setItem('fav',JSON.stringify(fav))
@@ -30,9 +27,9 @@ const List = () => {
             setFav([...fav,_id])
             console.log(_id)
         } 
+        localStorage.setItem('new_favorite', fav)
     }
-    
-
+   
 
   return (
     <div>
@@ -49,7 +46,7 @@ const List = () => {
             setToggle={setButtonPopup}
             />  
             </div>
-            <Favourites valorList={favoritos}/>
+            <Favourites valorList={fav}/>
             <li fav={adressTotal}>
             {adressTotal && adressTotal.map((ad,idx)=>(
                     <div>

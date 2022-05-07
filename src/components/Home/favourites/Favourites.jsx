@@ -1,9 +1,17 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 
 const Favourites = (props) => {
+    const [favorite,setFavorite] = useState('')
+    console.log(favorite,'fav de componente fav')
+    const getData= ()=>{
+        return localStorage.getItem('new_favorite')
+    }
+    useEffect(()=>{
+        setFavorite(getData())
+    },[])
     
   return (
-    <div>Favoritos:{props.valorList}</div>
+    <div>Favoritos:{favorite}</div>
   )
 }
 
