@@ -12,10 +12,8 @@ export const ROUT_ADD_ADRESS= 'http://localhost:5000/api/add';
 export function getAddress(){
     return async(dispatch)=>{
         let adress= await axios.get(ROUT_GET_ADRESS);
-        console.log(adress,'adres')
         let data= adress.data;
-        console.log(data,'data')
-
+        
         return dispatch({
             type:GET_ADRESS,
             payload:data
@@ -27,7 +25,6 @@ export function getTransaction(){
     return async(dispatch)=>{
         let adress= await axios.get(ROUT_GET_TRANSACTION);
         let data= adress.data;
-        console.log(data,'data')
 
         return dispatch({
             type:GET_TRANSACTION,
@@ -39,9 +36,7 @@ export function getTransaction(){
 export function getWallet(){
     return async(dispatch)=>{
         let wallet= await axios.get(ROUT_GET_WALLET);
-        console.log(wallet,'wallet')
         let data= wallet.data;
-        console.log(data,'data wallet')
 
         return dispatch({
             type:GET_WALLET,
@@ -53,7 +48,6 @@ export function getWallet(){
 export function addAdress(payload){
     return async function(){
         const created= await axios.post(ROUT_ADD_ADRESS,payload);
-         console.log(created.data)
         return created.data;
     } 
 }
