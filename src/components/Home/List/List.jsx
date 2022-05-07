@@ -12,18 +12,17 @@ const List = () => {
     const [fav,setFav]= useState([])
     let favs=[]
     const [favoritos,setFavoritos] = useState(null)
-    console.log(favoritos,'favoritos')
+    console.log(fav,'favoritos')
 
     const [buttonPopup, setButtonPopup] = useState(true);
     const [timedPopup, setTimedPopup] = useState(false);
     console.log(timedPopup,'timed')
     let favourite=()=>{
-        setFavoritos([...fav,fav])    
     }
     
     useEffect(()=>{
         dispatch(getAddress())
-        favourite()
+        window.localStorage.setItem('fav',JSON.stringify(fav))
     },[])
 
     const addFavorite = (_id)=>{
