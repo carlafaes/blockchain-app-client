@@ -1,10 +1,9 @@
 import React from 'react'
 
-const Favourites = (favs) => {
+const Favourites = (props) => {
     
-    console.log(favs,'props')
   return (
-    <div>Favourites</div>
+    <div>Favoritos:{props.valorList}</div>
   )
 }
 
