@@ -7,6 +7,7 @@ import { FaWallet,FaEthereum } from 'react-icons/fa';
  //components
 import List from './List/List';
 import Conversor from '../conversor/Conversor';
+import Loader from '../loader/Loader';
 
 
 
@@ -28,6 +29,7 @@ const Home = () => {
 
   return (
     <div  className={style.container_g}>
+      {wallet ?
       <center>
         <div className={style.container_g2}>
           <div className={style.wallet}>
@@ -72,6 +74,11 @@ const Home = () => {
         : null }
           </table>
           </center>
+          :
+          
+            <Loader/>
+          
+      }
     </div>
   )
 }
