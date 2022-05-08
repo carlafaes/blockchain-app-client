@@ -31,13 +31,13 @@ const Home = () => {
         <p>Total: {wallet} ETH</p>
         :
         <p>cargando</p>}
+      <center>
 
-        <div className={style.comp}>
         <Conversor/>
+        <div className={style.comp}>
         <Add/>
         <List/>
         </div>
-      <center>
         <table>
           <thead>
         <tr>

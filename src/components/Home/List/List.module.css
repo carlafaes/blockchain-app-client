@@ -12,7 +12,8 @@
     align-items: center;
 }
 .address{
-    width: 400px;
+    position: relative;
+    width: 90%;
     background-color: antiquewhite;
 }
 .btn{
