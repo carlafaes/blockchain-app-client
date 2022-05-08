@@ -3,6 +3,9 @@ import { useSelector,useDispatch } from 'react-redux';
 import { getAddress } from '../../../redux/action/index'
 import  style  from './List.module.css';
 import sty from '../favourites/Popup.module.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 //components
@@ -18,8 +21,22 @@ const List = () => {
 
     const [buttonPopup, setButtonPopup] = useState(true);
     const [timedPopup, setTimedPopup] = useState(false);
-    // console.log(timedPopup,'timed')
-   
+
+
+    const message= ()=>{
+        toast.success('Added to favorites successfully!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    }
+    
+  
+
     useEffect(()=>{
         dispatch(getAddress())
     },[])
@@ -30,6 +47,7 @@ const List = () => {
             // console.log(_id)
         } 
         localStorage.setItem('new_favorite', JSON.stringify(data))
+        message();
     }
    
 
@@ -57,6 +75,9 @@ const List = () => {
                 
                 ))}
         </li>
+        <ToastContainer 
+            theme='light'
+            />
     </div>
   )
 }
