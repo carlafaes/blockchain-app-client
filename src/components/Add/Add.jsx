@@ -42,9 +42,10 @@ const Add = () => {
             value={input.adress}
             name='adress'
             onChange={handleChange}
+            className='gral_input'
             />
-            <button type='submit'>
-                Add
+            <button className='close_btn' type='submit'>
+                New Adress
             </button>
         </form>
     </div>

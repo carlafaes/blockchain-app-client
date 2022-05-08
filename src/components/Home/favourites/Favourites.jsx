@@ -29,11 +29,11 @@ const Favourites = () => {
   return (
       <div>
         <div>
-            <h4>Order</h4>
-         <button onClick={handleSortAsc}>a-z</button>
-         <button onClick={handleSortDesc}>z-a</button>
+            <h4>ORDER</h4>
+         <button className='close_btn' onClick={handleSortAsc}>a-z</button>
+         <button className='close_btn' onClick={handleSortDesc}>z-a</button>
         </div>
-          <h4>Favorites</h4>
+          <h4>FAVORITES</h4>
           {dta&& dta.map((e)=>(
               <p>{e}</p>
           ))}

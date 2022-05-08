@@ -1,5 +1,6 @@
 import  style  from './Conversor.module.css';
 import React,{useState} from 'react'
+import logo from '../../utils/pngegg.png'
 
 const Conversor = () => {
 const  [val, setVal]=useState('')
@@ -29,7 +30,10 @@ function convertDol(e){
 
   return (
     <div className={style.container}>
-        <h3>Convert</h3>
+        <div className={style.cont_img_input}>
+        <img src={logo} alt='logo_xz' className={style.logo}/>
+        <div className={style.input_}>
+        <h3 className='title'>CONVERT</h3>
         <input
         type='number'
         id='cantidad'
@@ -38,12 +42,15 @@ function convertDol(e){
         name='val'
         placeholder='ETH'
         onChange={(e)=> getValue(e)}
+        className='gral_input'
         />
-            <button value='1' onClick={(e)=>convertEur(e)}>EUR</button>
-            <button value='2' onClick={(e)=>convertDol(e)}>USD</button>
+            <button className='close_btn' value='1' onClick={(e)=>convertEur(e)}>EUR</button>
+            <button className='close_btn' value='2' onClick={(e)=>convertDol(e)}>USD</button>
         {value ?( 
-        <p>Result: {value}</p>)
-        : <p>0.00</p>}
+        <p>RESULT: {value}</p>)
+        : <p>RESULT: 0.00</p>}
+        </div>
+        </div>
        
     </div>
   )

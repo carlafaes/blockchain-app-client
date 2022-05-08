@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.close_btn{
+  background-color: rgba(157, 163, 163, 0.548);
+  border-style:  groove;
+  border-color: aliceblue;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 7px;
+  margin: 5px;
+  transition: all ease-out 0.5s ;
+  font-family: monospace;
+  font-size: 15px;
+  color: rgb(3, 65, 3);
+}
+.close_btn:hover{
+ box-shadow: 1px 1px 10px gray;
+}
+.gral_input{
+  position: relative;
+  border-radius: 10px;
+  padding: 7px;
+  border-color: green;
+  border-width: 1px;
+  background-color: rgba(190, 196, 190, 0.363);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 250px;
+}
+.title{
+  position: relative;
+  color: rgb(6, 61, 6);
+  background-color: transparent;
+  font-family: monospace;
+  font-size: 20px;
+  letter-spacing: 2px;
+  
+}

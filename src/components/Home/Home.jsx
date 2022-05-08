@@ -3,7 +3,6 @@ import {useDispatch,useSelector} from 'react-redux'
 import { getWallet,getAddress,getTransaction } from '../../redux/action';
 import style from './Home.module.css'
  //components
- import Add from '../Add/Add';
 import List from './List/List';
 import Conversor from '../conversor/Conversor';
 
@@ -26,38 +25,45 @@ const Home = () => {
 
 
   return (
-    <div>
-      {wallet ? 
-        <p>Total: {wallet} ETH</p>
-        :
-        <p>cargando</p>}
+    <div  className={style.container_g}>
       <center>
+        <div className={style.container_g2}>
+          <div className={style.wallet}>
+          {wallet ? 
+          <>
+            <p>AVALAIBLE BALANCE: </p>
+            <br></br>
+            <p> {wallet} ETH</p>
+          </>
+            :
+            <p>Loading</p>}
+          </div>
 
         <Conversor/>
+        </div>
         <div className={style.comp}>
-        <Add/>
         <List/>
         </div>
-        <table>
-          <thead>
-        <tr>
-          <th>Block</th>
-          <th>From</th>
-          <th>To</th>
-          <th>Hash</th>
-          <th>Value</th>
+        <table className={style.tab_}>
+          <thead> 
+        <tr className={style.tr_}>
+          <th className={style.th_}>From</th>
+          <th className={style.th_}>Block</th>
+          <th className={style.th_}>To</th>
+          <th className={style.th_}>Hash</th>
+          <th className={style.th_}>Value</th>
         </tr>
           </thead>
         
 
           {transaction ? transaction.map((tr,idx)=>(
-            <tbody key={idx}>
-            <tr >
-              <td>{tr.blockNumber}</td>
-              <td>{tr.from}</td>
-              <td>{tr.to}</td>
-              <td>{tr.hash}</td>
-              <td>{tr.value}</td>
+            <tbody key={idx} >
+            <tr  className={style.tr_}>
+              <td className={style.td_}>{tr.blockNumber}</td>
+              <td className={style.td_}>{tr.from}</td>
+              <td className={style.td_}>{tr.to}</td>
+              <td className={style.td_}>{tr.hash}</td>
+              <td className={style.td_}>{tr.value}</td>
             </tr>
             </tbody>
           ))

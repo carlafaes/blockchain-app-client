@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //components
 import Popup from '../favourites/PopUp';
+import Add from '../../Add/Add';
 
 const List = () => {
     const dispatch= useDispatch();
@@ -53,11 +54,14 @@ const List = () => {
 
   return (
     <div>
-        
-            <div>Adress</div>
-            <button className={sty.close_btn}
+        <div className={style.container_gral}>
+        <div className={style.container_head}>
+            <button className='close_btn'
                 onClick={()=> setTimedPopup(true)}
-                >Open</button>
+            >Favorites</button>
+        <div className='title'>Adress</div>
+        <Add/>
+        </div>
             <div className={sty.main_}>
             <Popup
             timedPopup={timedPopup}
@@ -75,6 +79,7 @@ const List = () => {
                 
                 ))}
         </li>
+        </div>
         <ToastContainer 
             theme='light'
             />

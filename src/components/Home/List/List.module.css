@@ -1,20 +1,28 @@
 
 .li_add{
-    background-color: antiquewhite;
+    background-color: transparent;
     overflow: scroll;
-    width: 40%;
+    width: 100%;
     height: 400px;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
 }
+
+
 .add_fav{
-    background-color: rgba(0, 0, 255, 0.644);
+    background-color:transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 .address{
     position: relative;
-    width: 90%;
-    background-color: antiquewhite;
+    width: 95%;
+    background-color: transparent;
+    border-bottom-style: inset;
+    color: rgb(75, 71, 71);
 }
 .btn{
     margin: 5px;
@@ -26,4 +34,27 @@
 }
 .btn:hover{
     filter: drop-shadow(0 0 0.9em rgb(7, 3, 19));
+}
+.container_head{
+    background-color: aqua;
+    color: rgb(66, 61, 61);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+}
+
+.container_gral{
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
