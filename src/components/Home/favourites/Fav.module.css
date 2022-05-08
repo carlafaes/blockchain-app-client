@@ -1,0 +1,32 @@
+
+.container{
+    background-color: rgba(151, 161, 153, 0.658);
+    height: 100%;
+    border-radius: 10px;
+}
+.buttons_{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.fav_{
+    position: relative;
+    background-color: transparent;
+    height: 80%;
+    overflow: auto;
+    overscroll-behavior-y:contain;
+}
+.txt_{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: rgba(99, 91, 91, 0.993);
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    background-color: rgba(245, 245, 220, 0.308);
+    margin-bottom: 2px;
+}

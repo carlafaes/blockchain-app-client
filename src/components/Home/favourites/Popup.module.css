@@ -8,6 +8,17 @@
     position: fixed;
     z-index: 1000;
 }
+.btn{
+    background-color: transparent;
+    border-style: none;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.btn:hover{
+    color: green;
+}
 
 .popup{
     position:fixed;
@@ -28,7 +39,7 @@
     width: 100%;
     max-width: 640px;
     height: 400px;
-    background-color: rgba(202, 201, 188, 0.897);
+    background-color: rgba(143, 229, 182, 0.87);
     border-radius: 10px;
     padding-top: 20px;
     

@@ -1,9 +1,10 @@
 import React,{useEffect,useState} from 'react'
-
+import style from './Fav.module.css';
+import { BsWallet2 } from 'react-icons/bs';
 const Favourites = () => {
     const [favorite,setFavorite] = useState(null)
     const [dta,setDta]=useState(null)
-    console.log(dta,'dta')
+    const tab = <>&nbsp;</>;
     const getData= ()=>{
          setDta(JSON.parse(localStorage.getItem('new_favorite')))
             //   return data
@@ -27,16 +28,18 @@ const Favourites = () => {
     },[])
     
   return (
-      <div>
-        <div>
-            <h4>ORDER</h4>
-         <button className='close_btn' onClick={handleSortAsc}>a-z</button>
-         <button className='close_btn' onClick={handleSortDesc}>z-a</button>
+      <div className={style.container}>
+            <h4 className='title'>ORDER</h4>
+        <div className={style.buttons_}>
+         <button className='close_btn' onClick={handleSortAsc}>A-Z</button>
+         <button className='close_btn' onClick={handleSortDesc}>Z-A</button>
         </div>
-          <h4>FAVORITES</h4>
+        <div className={style.fav_}>
+          <h4 className='title'>FAVORITES</h4>
           {dta&& dta.map((e)=>(
-              <p>{e}</p>
+              <p className={style.txt_} > <BsWallet2/>{tab} {e}</p>
           ))}
+        </div>
     </div>
   )
 }

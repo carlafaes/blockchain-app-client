@@ -2,6 +2,8 @@ import React,{useState, useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux'
 import { getWallet,getAddress,getTransaction } from '../../redux/action';
 import style from './Home.module.css'
+import { FaWallet,FaEthereum } from 'react-icons/fa';
+
  //components
 import List from './List/List';
 import Conversor from '../conversor/Conversor';
@@ -11,7 +13,7 @@ import Conversor from '../conversor/Conversor';
 const Home = () => {
   const dispatch =useDispatch();
   const transaction= useSelector((tr)=> tr.value)
-  
+  const tab = <>&nbsp;</>;
   const wallet = useSelector((st) => st.wallet)
   const adress= useSelector((add)=> add.adress)
   
@@ -30,11 +32,11 @@ const Home = () => {
         <div className={style.container_g2}>
           <div className={style.wallet}>
           {wallet ? 
-          <>
-            <p>AVALAIBLE BALANCE: </p>
-            <br></br>
-            <p> {wallet} ETH</p>
-          </>
+          <div className={style.balance_}>
+            <p><FaWallet/> {tab} AVALAIBLE BALANCE: </p>
+            {tab}
+            <p> {wallet} <FaEthereum/>ETH</p>
+          </div>
             :
             <p>Loading</p>}
           </div>
